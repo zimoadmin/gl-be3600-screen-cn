@@ -6,9 +6,9 @@
 
 ## 文件
 
-- `gl-be3600-screen-cn_1.0.2-1_all.ipk`（32,966 字节）
-  - MD5：`f684af6c9b929edf1ee52de1718ce5f0`
-  - SHA-256：`14520fca46d70b1af4d76dc9beb9741052431a28ea495d46521be7212388df70`
+- `gl-be3600-screen-cn_1.0.3-1_all.ipk`（32,939 字节）
+  - MD5：`b73c7c2ad3436373b9a0fb0240cdd14e`
+  - SHA-256：`cdb1934247e309b91479ab063dc3a3b297261b713ab5cebce1cc4a7fb7688ee2`
   - 包内文件：`/usr/bin/skyris_screen_clients`（主程序，含中文字库）、`/etc/init.d/skyris_screen_clients`（自启服务）
 - `version.txt`：在线升级元数据，第一行版本号、第二行安装包文件名
 
@@ -17,7 +17,7 @@
 SSH 登录路由器后，把 ipk 上传到 `/tmp`，然后：
 
 ```sh
-opkg install /tmp/gl-be3600-screen-cn_1.0.2-1_all.ipk
+opkg install /tmp/gl-be3600-screen-cn_1.0.3-1_all.ipk
 ```
 
 卸载并恢复原厂英文屏幕：
@@ -33,7 +33,7 @@ opkg remove gl-be3600-screen-cn
 屏幕最后一个标签是「更新」，进入后有两个主按钮：
 
 1. **检查更新**：设备从本仓库的 `version.txt` 读取最新版本号，与当前版本比较，结果显示在按钮下方（「已是最新」/「发现新版 x.x」/「检查失败」）。
-2. **立即升级**：自动下载仓库里的最新 ipk 并执行 `opkg install --force-reinstall`，安装完成后服务自动重启，状态显示「升级成功」。下载过程中屏幕显示动画（进度条 + 扫光 + 跑马灯 + 当前下载源）。
+2. **立即升级**：自动下载仓库里的最新 ipk 并执行 `opkg install --force-reinstall`，安装完成后服务自动重启，状态显示「升级成功」。下载过程中屏幕显示动画（进度条 + 扫光 + 跑马灯 + 当前下载源）。升级成功后会自动删除下载到 `/tmp` 的安装包与临时文件（ipk、version.txt、安装日志、下载源列表），释放路由器存储；升级失败时保留安装包便于排查。
 
 下载按以下顺序逐个尝试，首个成功且校验通过的源即被采用，失败自动切换下一个：
 
