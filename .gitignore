@@ -1,0 +1,11 @@
+# 本仓库只发布 ipk 安装包与说明文档，不上传源码/本地工作文件
+_router_tmp/
+.workbuddy/
+*.py
+*.lua
+*.sh
+*.bak
+*.raw
+*.png
+BE3600_汉化命令.sh
+BE3600_中文触屏_使用说明.md
